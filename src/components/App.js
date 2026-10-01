@@ -35,16 +35,18 @@ const App = () => {
 
   return (
     <div id="main">
-      {cityList
-        .filter((city) => {
-          return city.country === "India";
-        })
-        .map((city, index) => (
-          <div key={`location${index + 1}`}>
-            <h1 data-testid="city-name">{city.name}</h1>
-            <h6 data-testid="city-country">{city.country}</h6>
-          </div>
-        ))}
+      <ol>
+        {cityList
+          .filter((city) => {
+            return city.country === "India";
+          })
+          .map((city, index) => (
+            <li key={`location${index}`}>
+              <h1 data-testid="city-name">{city.name}</h1>
+              <h6 data-testid="city-country">{city.country}</h6>
+            </li>
+          ))}
+      </ol>
     </div>
   );
 };
